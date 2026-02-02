@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Rashmitha Kodakandla - Cybersecurity Analyst & SOC Specialist">
+    <title>Rashmitha Kodakandla | Cybersecurity Analyst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda;
+            --card-bg: #112240;
+            --nav-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 1px;
+            background-color: #233554;
+            margin-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 5px 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 150px;
+        }
+
+        .hero-intro {
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 20px;
+        }
+
+        .hero-name {
+            font-size: 4rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 3rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 150px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-title {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 40px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .company {
+            color: var(--accent);
+        }
+
+        .job-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .job-details ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .job-details li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .job-details li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .sub-role {
+            margin-top: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #233554;
+        }
+        
+        .sub-role-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.0rem;
+            margin-bottom: 5px;
+        }
+
+        /* Contact */
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; } /* Simplified for single file */
+            #hero { padding: 100px 20px; align-items: flex-start; }
+            section { padding: 60px 20px; }
+            .hero-name { font-size: 3rem; }
+            .hero-subtitle { font-size: 2rem; }
+            h2::after { width: 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RK</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <p class="hero-intro">Hi, my name is</p>
+        <h1 class="hero-name">Rashmitha Kodakandla.</h1>
+        <h2 class="hero-subtitle" style="color: var(--text-secondary); margin-bottom: 20px; font-family: 'Inter', sans-serif;">I hunt threats & secure networks.</h2>
+        <p class="hero-desc">
+            Cybersecurity Analyst specializing in SOC Operations, Threat Hunting, and Incident Response. 
+            Leveraging Microsoft Defender, Splunk, and Reverse Engineering skills to minimize organizational risk.
+        </p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <section id="skills">
+        <h2>01. Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-title"><i class="fa-solid fa-shield-halved"></i> Security Tools</div>
+                <ul class="skill-list">
+                    <li>Defender for Endpoint (EDR)</li>
+                    <li>Microsoft Threat Protection (MTP)</li>
+                    <li>VirusTotal & CyberChef</li>
+                    <li>Wireshark & URLVoid</li>
+                    <li>Purview DLP</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-title"><i class="fa-solid fa-radar"></i> SOC & Analysis</div>
+                <ul class="skill-list">
+                    <li>Threat Hunting & Incident Response</li>
+                    <li>Malware Analysis (Ghidra, IDA Pro)</li>
+                    <li>IOC Extraction & Behavior Analysis</li>
+                    <li>MITRE ATT&CK & Cyber Kill Chain</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-title"><i class="fa-solid fa-code"></i> Querying & Dev</div>
+                <ul class="skill-list">
+                    <li>Splunk (SPL)</li>
+                    <li>Azure Data Explorer (KQL)</li>
+                    <li>PowerShell (Basics)</li>
+                    <li>Python</li>
+                    <li>Regex & AutoGen</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-title"><i class="fa-solid fa-users"></i> Soft Skills</div>
+                <ul class="skill-list">
+                    <li>Analytical Thinking</li>
+                    <li>Troubleshooting</li>
+                    <li>Documentation & SOPs</li>
+                    <li>Team Leadership & Mentoring</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>02. Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Cybersecurity Analyst <span class="company">@ LTIMindtree</span></h3>
+                <span class="job-date">Jan 2023 - Present</span>
+            </div>
+            <div class="job-details">
+                <p style="margin-bottom: 15px; color: var(--text-primary);">Focus: SOC Operations & Threat Detection</p>
+                <ul>
+                    <li>Conducted threat hunting, malware analysis, and incident response in a 24/7 SOC environment.</li>
+                    <li>Monitored logs and correlated events in Splunk & Azure Data Explorer, reducing false positives by 25%.</li>
+                    <li>Designed and fine-tuned custom detection rules (Regex/KQL) for zero-day threats and data exfiltration patterns.</li>
+                    <li>Authored SOPs, incident reports, and detection playbooks, ensuring process consistency.</li>
+                </ul>
+
+                <div class="sub-role">
+                    <div class="sub-role-title">M365D Operations & Incident Grading</div>
+                    <ul>
+                        <li>Investigated and triaged security alerts from OATP, AATP, MCAS, and MTP.</li>
+                        <li>Mapped incidents to MITRE ATT&CK techniques to strengthen adversary detection coverage.</li>
+                        <li>Created and deployed KQL-based detection rules to enhance SOC alert accuracy.</li>
+                    </ul>
+                </div>
+
+                <div class="sub-role">
+                    <div class="sub-role-title">Malware Analysis Team</div>
+                    <ul>
+                        <li>Performed static and dynamic analysis of malware samples using Ghidra / IDA Pro.</li>
+                        <li>Updated Microsoft Defender signatures with newly discovered malware behaviors.</li>
+                        <li>Performed reverse engineering of malware (EXEs, macros, PDFs) using Ghidra and CyberChef.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Email Security Analyst <span class="company">@ LTIMindtree</span></h3>
+                <span class="job-date">Sep 2021 - Dec 2022</span>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li>Investigated phishing and spam campaigns, analyzing malicious URLs, attachments, and sender patterns.</li>
+                    <li>Built and maintained domain/IP blocklists to proactively block identified malicious infrastructure.</li>
+                    <li>Enhanced detection logic to improve phishing/spam filtering and reduce user compromise attempts.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">QA Analyst <span class="company">@ Travelers</span></h3>
+                <span class="job-date">Previous Experience</span>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li>Conducted detailed manual testing for web-based applications (React UI).</li>
+                    <li>Authored and executed test cases for critical application modules including LOB selection.</li>
+                    <li>Documented user story acceptance and test evidence in Rally, ensuring audit readiness.</li>
+                    <li>Collaborated with developers to identify defects using bug tracking tools.</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>03. About & Education</h2>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+            <div style="flex: 2;">
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                    Cybersecurity analyst with 4 years of diverse experience, building a strong foundation in manual software testing before progressing into advanced roles in security operations. 
+                </p>
+                <p style="color: var(--text-secondary);">
+                    Proficient in Microsoft Defender, Splunk, and Azure Data Explorer with expertise in developing custom detection rules. Recognized for accurately grading and prioritizing security alerts to minimize organizational risk.
+                </p>
+            </div>
+            <div style="flex: 1; border-left: 2px solid var(--accent); padding-left: 20px;">
+                <h4 style="color: var(--accent); font-family: 'JetBrains Mono', monospace;">Education</h4>
+                <p style="color: var(--text-primary); margin-top: 10px; font-weight: bold;">B.Tech in ECE</p>
+                <p style="color: var(--text-secondary);">Sridevi Women’s Engineering College</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Graduated: 2021</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <p style="color: var(--accent); font-family: 'JetBrains Mono', monospace;">04. What's Next?</p>
+            <h2 style="justify-content: center; color: var(--text-primary); font-size: 2.5rem; margin-bottom: 10px;">Get In Touch</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                I am currently based in Hyderabad, India. Whether you have a question about my work in SOC Operations, Malware Analysis, or just want to say hi, my inbox is open!
+            </p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i> rashmitha819@gmail.com
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i> +91 8374630438
+                </div>
+            </div>
+
+            <a href="mailto:rashmitha819@gmail.com" class="btn" style="padding: 15px 30px; font-size: 1rem;">Say Hello</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built by Rashmitha Kodakandla</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
